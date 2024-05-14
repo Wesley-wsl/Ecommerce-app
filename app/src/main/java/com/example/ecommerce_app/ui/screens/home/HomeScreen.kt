@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.ecommerce_app.ui.components.greeting.Greeting
+import com.example.ecommerce_app.ui.components.hero_slider.HeroSlider
 import com.example.ecommerce_app.ui.components.search_input.SearchInput
 import com.example.ecommerce_app.ui.components.shopping_cart.ShoppingCart
 
@@ -33,8 +34,14 @@ fun HomeScreen() {
 
             ShoppingCart(count = "5")
         }
-        Box(modifier = Modifier.padding(end = 24.dp, top = 14.dp).background(Color.Transparent)) {
+        Box(
+            modifier = Modifier
+                .padding(end = 24.dp, top = 14.dp)
+                .background(Color.Transparent)
+        ) {
             SearchInput()
         }
+
+        HeroSlider(modifier = Modifier.padding(top = 8.dp))
     }
 }

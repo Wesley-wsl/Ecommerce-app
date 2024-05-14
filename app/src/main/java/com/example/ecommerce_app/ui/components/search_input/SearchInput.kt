@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ecommerce_app.R
@@ -32,13 +33,15 @@ fun SearchInput() {
     TextField(
         value = search,
         onValueChange = { search = it },
+        singleLine = true,
         leadingIcon = {
             Image(
                 painter = painterResource(R.drawable.search),
                 contentDescription = "Search",
                 modifier = Modifier
                     .padding(start = 10.dp)
-                    .scale(2.5f),
+                    .width(20.dp)
+                    .height(18.dp)
             )
         },
         trailingIcon = {
@@ -47,7 +50,8 @@ fun SearchInput() {
                 contentDescription = "Microphone",
                 modifier = Modifier
                     .padding(end = 12.dp)
-                    .scale(2.5f)
+                    .width(15.dp)
+                    .height(19.dp)
             )
         },
         placeholder = {
@@ -55,9 +59,11 @@ fun SearchInput() {
                 text = "Search",
                 color = colorResource(R.color.placeholder),
                 fontFamily = Poppins,
-                fontSize = 16.sp
+                fontSize = 16.sp,
+                modifier = Modifier.padding(top = 2.dp)
             )
-        }, modifier = Modifier
+        },
+        modifier = Modifier
             .width(404.dp)
             .height(57.dp),
         shape = RoundedCornerShape(40.dp),
