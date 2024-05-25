@@ -27,6 +27,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.ecommerce_app.ui.components.bottom_navigation.BottomNavigation
+import com.example.ecommerce_app.ui.screens.categories.CategoriesScreen
 import com.example.ecommerce_app.ui.screens.home.HomeScreen
 import com.example.ecommerce_app.ui.theme.EcommerceAppTheme
 
@@ -82,6 +83,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.padding(innerPadding)
                         ) {
                             composable(Screen.Home.route) { HomeScreen(navController) }
+                            composable(Screen.Categories.route) { CategoriesScreen(navController) }
                         }
                     }
                 }
